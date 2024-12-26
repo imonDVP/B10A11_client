@@ -5,7 +5,7 @@ import { toast } from "react-toastify";
 
 const PurchaseServiceEdit = () => {
             const {id}=useParams();
-            console.log(id)
+            // console.log(id)
             // ======Using this Information for Form fill up=====
             //===Fetching Booked Service Information from DB by ID====
             const [purchaseEditService,setPurchaseEditService]=useState({});
@@ -19,7 +19,7 @@ const PurchaseServiceEdit = () => {
             }
             console.log(purchaseEditService);
             const {_id,serviceImage,serviceCategory,servicePrice,serviceProvider}=purchaseEditService || {}
-            console.table({id,_id});
+            // console.table({id,_id});
             // ====================================
 
 

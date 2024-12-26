@@ -18,7 +18,7 @@ const ServiceDetails = () => {
         const {data}=await axiosSecure.get(`/service/${id}`);
         setServiceDetails(data);
     }
-    console.log(serviceDetails);
+    // console.log(serviceDetails);
     const {_id,serviceImage,serviceCategory,servicePrice,serviceArea,serviceDescription,serviceProvider}=serviceDetails || {}
     console.table({id,_id,});
 

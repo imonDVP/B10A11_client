@@ -19,7 +19,7 @@ const ManageService = () => {
             const {data}=await axiosSecure.get(`/myaddedservices/${user?.email}`);
             setMyAddedServices(data);
         }
-        console.log(myAddedServices);
+        // console.log(myAddedServices);
 
 
 

@@ -1,5 +1,5 @@
 import { useContext, useState } from "react";
-import { Link} from "react-router-dom";
+import { Link, useNavigate} from "react-router-dom";
 import { authContext } from "../AuthProvider/AuthProvider";
 import { toast } from "react-toastify";
 
@@ -7,32 +7,32 @@ import { toast } from "react-toastify";
 const Register = () => {
     const {handleRegister,setUser,updateUserProfile}=useContext(authContext);
     const [errMessage,setErrMessage]=useState('');
-    // const navigate = useNavigate();
+    const navigate = useNavigate();
 
 
 
     const handleRegisterSubmit=async(e)=>{
         console.log(e);
         e.preventDefault();
-        //get form data
+        //====get form data=====
         const name = e.target.name.value
         const photo = e.target.photo.value
         const email = e.target.email.value
         const password = e.target.password.value
         // console.log({name,email,photo,password})
         //____For password validation______
-        // if(password.length < 6){
-        //     setError("Password must contain at least 6 characters")
-        //     return
-        // }
-        // if(!/[a-z]/.test(password)){
-        //     setError("Password must contain at least one lowercase letter")
-        //     return;
-        // }
-        // if(!/[A-Z]/.test(password)){
-        //     setError("Password must contain at least one uppercase letter")
-        //     return;
-        // }
+        if(password.length < 6){
+            toast.error("Password must contain at least 6 characters")
+            return
+        }
+        if(!/[a-z]/.test(password)){
+            toast.error("Password must contain at least one lowercase letter")
+            return;
+        }
+        if(!/[A-Z]/.test(password)){
+            toast.error("Password must contain at least one uppercase letter")
+            return;
+        }
 
 
         //___for saving the user and updateProfile in firebase_______
@@ -48,7 +48,7 @@ const Register = () => {
                 displayName: name 
             })
             toast.success('Register Successful')
-            // navigate('/')
+            navigate('/')
         } catch (error) {
             const errorMessage=error?.message;
             setErrMessage(errorMessage);

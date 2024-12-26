@@ -2,9 +2,11 @@ import { useContext } from "react";
 import { authContext } from './../AuthProvider/AuthProvider';
 import { toast } from "react-toastify";
 import useAxiosSecure from "../CustomHooks/useAxiosSecure";
+import { useNavigate } from "react-router-dom";
 
 
 const AddService = () => {
+    const navigate=useNavigate();
     const axiosSecure=useAxiosSecure();
     // ===Current User Information====
     const {user}=useContext(authContext)
@@ -32,7 +34,9 @@ const AddService = () => {
             // const url=`${import.meta.env.VITE_API_URL}`
             // console.log(url)
             const {data}=await axiosSecure.post(`/add-service`,serviceData);
-            console.log(data)
+            console.log(data);
+            toast.success('Your service is add successfully!')
+            navigate('/');
         }catch(error){
             console.log(error.message);
             toast.error('Form Data is not added successfully');

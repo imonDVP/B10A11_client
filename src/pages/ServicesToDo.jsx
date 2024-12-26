@@ -22,7 +22,7 @@ const ServicesToDo = () => {
         const { data } = await axiosSecure.get(`/service-to-do/${user?.email}`)
         setServicesToDo(data)
     }
-    console.log(servicesToDo)
+    // console.log(servicesToDo)
 
     // _____Handle actions or status Button functionality of bid request____
         const handleStatusChange = async (id,status) => {
