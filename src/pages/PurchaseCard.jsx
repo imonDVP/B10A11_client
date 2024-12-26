@@ -5,13 +5,14 @@ import { useContext, useEffect, useState } from "react";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import { authContext } from "../AuthProvider/AuthProvider";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import axios from "axios";
 import { toast } from "react-toastify";
 //============================================
 
 
 const PurchaseCard = () => {
+        const navigate=useNavigate();
         // ===Current(Customer) User Information====
         const {user}=useContext(authContext);
         console.log(user);
@@ -71,6 +72,7 @@ const PurchaseCard = () => {
                 const {data}=await axios.post(`${import.meta.env.VITE_API_URL}/purchaseService`,purchaseServiceData);
                 console.log(data)
                 toast.success('Purchase Service Data is added successfully');
+                navigate('/')
             }catch(error){
                 console.log(error.message);
                 toast.error('Purchase Service Data is not added successfully');

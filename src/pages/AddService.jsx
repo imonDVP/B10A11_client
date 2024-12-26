@@ -127,7 +127,7 @@ const AddService = () => {
                         <input
                         type="submit"
                         value="Add Service"
-                        className="btn w-full bg-green-500 text-white mt-6 md:w-1/2"
+                        className="btn w-full bg-green-500 text-white mt-6 md:w-1/2 skeleton"
                         />
                     </form>
                 </div>

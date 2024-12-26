@@ -44,7 +44,7 @@ const ServiceCard = ({service}) => {
                     <span>Description:</span>{serviceDescription.substring(0,60)}...
                 </p>
                 <div className="card-actions">
-                    <Link to={`/service/${_id}`} className="btn btn-primary">View Detail</Link>
+                    <Link to={`/service/${_id}`} className="btn btn-success text-white rounded-full skeleton">View Detail</Link>
                 </div>
             </div>
         </div>

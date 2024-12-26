@@ -98,11 +98,11 @@ const Navbar = () => {
                         )}
                 </div>
                 {/* ====Dark Mode Button===== */}
-                <button onClick={changeTheme}>
+                <button onClick={changeTheme} className="rounded-full">
                     {
                         mode==="dark" ?
-                        <img className="" src={sun} alt="" /> :
-                        <img className="bg-slate-400" src={moon} alt="" />
+                        <img className="rounded-full" src={sun} alt="" /> :
+                        <img className="bg-slate-400 rounded-full" src={moon} alt="" />
                     }
                 </button>
         </div>

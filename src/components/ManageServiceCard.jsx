@@ -1,11 +1,11 @@
 import axios from "axios";
 import { toast } from "react-toastify";
-import { Link } from 'react-router-dom';
+import { Link} from 'react-router-dom';
 
 
 // eslint-disable-next-line react/prop-types
 const ManageServiceCard = ({myAddedService,fetchMyAddedServices}) => {
-    console.log(myAddedService)
+    // console.log(myAddedService)
     const {_id,serviceImage,serviceCategory,servicePrice,serviceArea}=myAddedService || {};
         
         // ___handle delete functionality______
@@ -44,7 +44,7 @@ const ManageServiceCard = ({myAddedService,fetchMyAddedServices}) => {
         );
     }
     return (
-        <div className="card card-compact  shadow-xl bg-white dark:bg-black dark:text-white">
+        <div className="card card-compact mt-7 shadow-xl bg-white dark:bg-black dark:text-white">
             <figure>
                 <img
                 src={serviceImage}
@@ -63,10 +63,10 @@ const ManageServiceCard = ({myAddedService,fetchMyAddedServices}) => {
                     </p>
                 </div>
                 <div className="card-actions justify-end">
-                    <Link to={`/purchase-service-edit/${_id}`} className="btn btn-primary w-24">Edit</Link>
+                    <Link to={`/purchase-service-edit/${_id}`} className="btn btn-success text-white rounded-full skeleton w-24">Edit</Link>
                     <button 
                         onClick={()=>modalDelete(_id)} 
-                        className="btn btn-primary w-24"
+                        className="btn btn-success text-white rounded-full skeleton w-24"
                     >Delete</button>
                 </div>
             </div>
