@@ -14,7 +14,7 @@ const Navbar = () => {
 
 
     return (
-        <div className="navbar bg-slate-300 text-black font-bold dark:bg-black dark:text-white">
+        <div className="navbar bg-slate-200 text-black font-bold dark:bg-black dark:text-white">
             <div className="navbar-start">
                 <div className="dropdown">
                     <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -33,7 +33,7 @@ const Navbar = () => {
                     </div>
                     <ul
                         tabIndex={0}
-                        className="menu dropdown-content z-[50] mt-3  shadow ">
+                        className="menu dropdown-content z-[40] mt-3  shadow ">
                         <NavLink to='/'><li><a className="">Home</a></li></NavLink>
                         <NavLink to='/allservices'><li><a>All Services</a></li></NavLink>
                         {user &&
@@ -57,7 +57,7 @@ const Navbar = () => {
                 </Link>
             </div>
             <div className="navbar-center hidden lg:flex">
-                <ul className="menu menu-horizontal px-1 z-[50]">
+                <ul className="menu menu-horizontal px-1 z-[40]">
                     <NavLink to='/'><li><a>Home</a></li></NavLink>
                     <NavLink to='/allservices'><li><a>All Services</a></li></NavLink>
                     {user &&
@@ -85,7 +85,7 @@ const Navbar = () => {
                 </div>
                 <div className='flex gap-2'>
                     {user && user?.email ? (
-                        <NavLink to='/login' className="btn btn-neutral text-white bg-success rounded-full skeleton">
+                        <NavLink to='/login' className="btn btn-ghost text-white bg-success rounded-full skeleton">
                             <button onClick={handleLogout} className=" btn-neutral ">
                                 Log-Out
                             </button>
@@ -102,7 +102,7 @@ const Navbar = () => {
                     {
                         mode==="dark" ?
                         <img className="rounded-full" src={sun} alt="" /> :
-                        <img className="bg-slate-400 rounded-full" src={moon} alt="" />
+                        <img className="bg-slate-300 rounded-full" src={moon} alt="" />
                     }
                 </button>
         </div>
