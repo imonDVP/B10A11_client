@@ -17,7 +17,7 @@ import bgimg4 from '../assets/img9.jpg'
 
 export default function Carousel() {
   return (
-    <div className='container px-6 py-10 mx-auto bg-slate-200  dark:bg-black dark:text-white'>
+    <div className='container px-6 py-10 mx-auto bg-slate-100  dark:bg-black dark:text-white'>
       <Swiper
         spaceBetween={30}
         centeredSlides={true}
